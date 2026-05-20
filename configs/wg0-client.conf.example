@@ -1,0 +1,14 @@
+# GhostGate WireGuard client template
+#
+# Do not commit real private keys.
+
+[Interface]
+PrivateKey = REPLACE_WITH_ROUTER_PRIVATE_KEY
+Address = 10.8.0.2/24
+DNS = 10.10.10.1
+
+[Peer]
+PublicKey = REPLACE_WITH_SERVER_PUBLIC_KEY
+Endpoint = REPLACE_WITH_VPS_PUBLIC_IP:51820
+AllowedIPs = 0.0.0.0/0
+PersistentKeepalive = 25

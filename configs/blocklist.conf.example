@@ -1,0 +1,8 @@
+# GhostGate dnsmasq blocklist example
+#
+# Copy this to /etc/dnsmasq.d/blocklist.conf on the Router VM later.
+
+address=/doubleclick.net/0.0.0.0
+address=/googlesyndication.com/0.0.0.0
+address=/google-analytics.com/0.0.0.0
+address=/facebook.net/0.0.0.0

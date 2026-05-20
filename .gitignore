@@ -216,3 +216,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# GhostGate secrets and local runtime files
+*.key
+*.pem
+*.conf.private
+wg0.conf
+*.private
+logs/
+dashboard/instance/

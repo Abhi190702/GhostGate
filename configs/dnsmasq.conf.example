@@ -1,0 +1,14 @@
+# GhostGate dnsmasq example
+#
+# Copy this to /etc/dnsmasq.d/ghostgate.conf on the Router VM later.
+# Adjust interface names after checking `ip a`.
+
+interface=enp0s8
+listen-address=10.10.10.1
+bind-interfaces
+
+server=1.1.1.1
+server=8.8.8.8
+
+log-queries
+log-facility=/var/log/dnsmasq.log

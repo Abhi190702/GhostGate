@@ -1,0 +1,7 @@
+# GhostGate split tunneling example
+#
+# This is a future config format idea. It is not active yet.
+
+VPN_DOMAINS=ifconfig.me,example.com
+DIRECT_DOMAINS=ubuntu.com,debian.org
+BLOCK_DOMAINS=doubleclick.net,facebook.net

@@ -308,6 +308,7 @@ GhostGate/
 │   ├── roadmap.md
 │   ├── learning-notes.md
 │   ├── ethical-use.md
+│   ├── day-1-checklist.md
 │   ├── virtualbox-setup.md
 │   ├── nat-routing.md
 │   ├── dns.md
@@ -333,9 +334,9 @@ GhostGate/
 │   └── ghostgate
 │
 ├── configs/
-│   ├── dnsmasq.conf
-│   ├── blocklist.conf
-│   ├── torrc
+│   ├── dnsmasq.conf.example
+│   ├── blocklist.conf.example
+│   ├── torrc.example
 │   ├── wg0-client.conf.example
 │   └── split-tunnel.conf.example
 │
@@ -378,6 +379,19 @@ Completed:
 - Roadmap created
 - Architecture documented
 - Learning goals defined
+- Ethical use policy added
+- Example configs added
+- Day 1 checklist added
+
+---
+
+## Documentation Index
+
+- [Architecture](docs/architecture.md)
+- [Roadmap](docs/roadmap.md)
+- [Learning Notes](docs/learning-notes.md)
+- [Ethical Use](docs/ethical-use.md)
+- [Day 1 Checklist](docs/day-1-checklist.md)
 
 ---
 
