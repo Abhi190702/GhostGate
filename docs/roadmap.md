@@ -28,7 +28,7 @@ Tasks:
 
 - Create the Router VM
 - Create the Client VM
-- Configure VirtualBox internal network `labnet`
+- Configure VMware LAN Segment `GhostGate-Lab`
 - Assign static IPs
 - Enable IP forwarding on the Router VM
 - Add NAT rules

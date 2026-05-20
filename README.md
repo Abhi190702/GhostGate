@@ -2,7 +2,7 @@
 
 **GhostGate** is a virtual privacy router lab built for learning Linux networking, privacy engineering, DNS filtering, firewalling, Tor routing, WireGuard VPN, traffic monitoring, and self-hosted VPN concepts.
 
-The project simulates a Raspberry Pi-style privacy router completely inside virtual machines, without requiring extra hardware.
+The project simulates a Raspberry Pi-style privacy router completely inside VMware virtual machines, without requiring extra hardware.
 
 ---
 
@@ -118,7 +118,7 @@ By building GhostGate, I aim to learn:
 
 | Component | Tool |
 |---|---|
-| Virtualization | VirtualBox |
+| Virtualization | VMware Workstation Pro |
 | Router OS | Ubuntu Server / Debian |
 | Client OS | Ubuntu Desktop / Linux Mint |
 | DNS | dnsmasq |
@@ -157,7 +157,7 @@ Tasks:
 
 - Create Router VM
 - Create Client VM
-- Configure VirtualBox internal network
+- Configure VMware LAN Segment network
 - Assign static IP addresses
 - Enable IP forwarding on Router VM
 - Configure NAT using iptables
@@ -309,7 +309,12 @@ GhostGate/
 │   ├── learning-notes.md
 │   ├── ethical-use.md
 │   ├── day-1-checklist.md
-│   ├── virtualbox-setup.md
+│   ├── day-2-checklist.md
+│   ├── day-3-checklist.md
+│   ├── vmware-setup.md
+│   ├── ubuntu-server-install.md
+│   ├── static-ip-setup.md
+│   ├── ip-forwarding.md
 │   ├── nat-routing.md
 │   ├── dns.md
 │   ├── firewall.md
@@ -392,6 +397,14 @@ Completed:
 - [Learning Notes](docs/learning-notes.md)
 - [Ethical Use](docs/ethical-use.md)
 - [Day 1 Checklist](docs/day-1-checklist.md)
+- [VMware Setup](docs/vmware-setup.md)
+- [Ubuntu Server Install Notes](docs/ubuntu-server-install.md)
+- [Static IP Setup](docs/static-ip-setup.md)
+- [IP Forwarding](docs/ip-forwarding.md)
+- [NAT Routing](docs/nat-routing.md)
+- [Day 2 Checklist](docs/day-2-checklist.md)
+- [Day 3 Checklist](docs/day-3-checklist.md)
+- [Troubleshooting](docs/troubleshooting.md)
 
 ---
 

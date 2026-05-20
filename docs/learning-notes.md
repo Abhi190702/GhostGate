@@ -105,3 +105,54 @@ Use this pattern while building:
 3. Test it with commands.
 4. Write what worked and what failed.
 5. Commit the progress.
+
+## Day 2 Notes
+
+### Why does the Router VM need two adapters?
+
+The Router VM needs one adapter for the outside network and one adapter for the
+inside lab network.
+
+```text
+NAT adapter -> host internet
+LAN Segment adapter -> Client VM
+```
+
+This lets the Router VM sit between the client and the internet.
+
+### Why does the Client VM only get one adapter?
+
+The Client VM gets only the `GhostGate-Lab` LAN Segment adapter so it cannot bypass the
+Privacy Router VM.
+
+This is the main security and learning point of the lab: all client traffic must
+flow through the router.
+
+### Why use a VMware LAN Segment?
+
+VMware LAN Segment creates a private virtual switch. Only VMs connected to the
+same LAN Segment name can talk to each other.
+
+For GhostGate, that LAN Segment name is:
+
+```text
+GhostGate-Lab
+```
+
+## Day 3 Notes
+
+### Router interface names
+
+Current VMware Router VM interface roles:
+
+```text
+ens33 -> outside VMware NAT
+ens37 -> inside GhostGate-Lab LAN Segment
+```
+
+The outside interface receives an address from VMware DHCP. The inside interface
+gets a static GhostGate address:
+
+```text
+10.10.10.1/24
+```

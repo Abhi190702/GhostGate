@@ -2,8 +2,8 @@
 
 This folder will contain GhostGate automation scripts.
 
-Scripts should be written for the Linux Privacy Router VM, not for the Windows
-host machine.
+Most scripts should be written for the Linux Privacy Router VM. Host notes live
+under `scripts/host/`.
 
 ## Planned Scripts
 
@@ -23,9 +23,15 @@ host machine.
 | `leak-test.sh` | Check public IP, DNS route, Tor, WireGuard, and default route |
 | `ghostgate` | Main CLI wrapper |
 
+## Host Helpers
+
+| Script | Purpose |
+|---|---|
+| `host/vmware-notes.md` | VMware Workstation Pro host setup notes |
+
 ## Safety Notes
 
 - Read every script before running it with `sudo`.
 - Do not run firewall scripts over SSH until you understand the rules.
-- Keep interface names configurable because VirtualBox names may differ.
+- Keep interface names configurable because VMware interface names may differ.
 - Never commit VPN private keys or real VPS secrets.

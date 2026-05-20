@@ -3,7 +3,7 @@
 GhostGate uses a small virtual lab to show how traffic moves through a router,
 DNS resolver, firewall, VPN tunnel, and Tor gateway.
 
-The first version uses two virtual machines:
+The first version uses two VMware virtual machines:
 
 - Client VM
 - Privacy Router VM
@@ -24,20 +24,20 @@ Client VM -> Privacy Router VM -> Host Wi-Fi -> Internet
 | Client VM | User machine inside the lab | 10.10.10.2 |
 | Privacy Router VM | Gateway, DNS, firewall, tunnel controller | 10.10.10.1 |
 
-## VirtualBox Adapter Plan
+## VMware Adapter Plan
 
 ### Privacy Router VM
 
-| Adapter | Type | Purpose |
+| Adapter | VMware setting | Purpose |
 |---|---|---|
-| Adapter 1 | NAT | Gives the router VM internet access through the host |
-| Adapter 2 | Internal Network: `labnet` | Connects the router VM to the client VM |
+| Adapter 1 | NAT | Gives the router VM internet access through the Windows host |
+| Adapter 2 | LAN Segment: `GhostGate-Lab` | Connects the router VM to the client VM |
 
 ### Client VM
 
-| Adapter | Type | Purpose |
+| Adapter | VMware setting | Purpose |
 |---|---|---|
-| Adapter 1 | Internal Network: `labnet` | Forces the client to use the router VM as gateway |
+| Adapter 1 | LAN Segment: `GhostGate-Lab` | Forces the client to use the router VM as gateway |
 
 ## Router Responsibilities
 
@@ -63,7 +63,7 @@ Client VM -> Router VM -> Internet
 ```
 
 When this works, the client VM can reach the internet even though it only has an
-internal VirtualBox network adapter.
+private VMware LAN Segment adapter.
 
 ## Advanced VPN Flow
 
