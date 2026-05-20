@@ -35,3 +35,9 @@ ping -c 3 8.8.8.8
 ```
 
 DNS may still fail until GhostGate DNS is configured.
+
+Current verified result:
+
+```text
+Client 10.10.10.2 -> 8.8.8.8 works through Router 10.10.10.1
+```

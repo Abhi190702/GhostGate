@@ -110,6 +110,60 @@ sudo nmcli con up ghostgate-client
 ip -br a
 ping -c 3 10.10.10.1
 ```
+
+## dnsmasq Fails To Start
+
+If `sudo systemctl restart dnsmasq` fails, test the config first:
+
+```bash
+sudo dnsmasq --test
+sudo systemctl status dnsmasq --no-pager -l
+sudo journalctl -xeu dnsmasq.service --no-pager
+```
+
+Common causes:
+
+- typo in `/etc/dnsmasq.d/ghostgate.conf`
+- wrong interface name
+- another service already using port 53
+
+Check the interface:
+
+```bash
+ip -br a
+```
+
+Check port 53:
+
+```bash
+sudo ss -tulpn | grep ':53'
+```
+
+## Client Can Ping Router But Not Internet
+
+If the Client VM can ping `10.10.10.1` and resolve domains, but cannot ping
+`8.8.8.8`, router forwarding or NAT is missing after reboot.
+
+On the Router VM, restore forwarding and NAT:
+
+```bash
+sudo sysctl -w net.ipv4.ip_forward=1
+echo "net.ipv4.ip_forward=1" | sudo tee /etc/sysctl.d/99-ghostgate.conf
+
+sudo iptables -t nat -C POSTROUTING -o ens33 -j MASQUERADE || sudo iptables -t nat -A POSTROUTING -o ens33 -j MASQUERADE
+sudo iptables -C FORWARD -i ens37 -o ens33 -j ACCEPT || sudo iptables -A FORWARD -i ens37 -o ens33 -j ACCEPT
+sudo iptables -C FORWARD -i ens33 -o ens37 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT || sudo iptables -A FORWARD -i ens33 -o ens37 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+
+sudo netfilter-persistent save
+```
+
+Then test from the Client VM:
+
+```bash
+ping -c 3 8.8.8.8
+ping -c 3 google.com
+curl --max-time 10 ifconfig.me
+```
 - DNS is configured
 
 ## Do Not Commit Secrets

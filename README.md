@@ -16,6 +16,48 @@ GhostGate is not a commercial VPN replacement or a tool claiming perfect anonymi
 
 ---
 
+## Current Verified Status
+
+GhostGate currently has a working VMware-based virtual privacy router foundation.
+
+Verified lab setup:
+
+| Component | Current value |
+|---|---|
+| Virtualization | VMware Workstation Pro |
+| Router VM | Ubuntu Server |
+| Client VM | Ubuntu Desktop |
+| Router outside interface | `ens33`, VMware NAT, `192.168.219.134/24` |
+| Router inside interface | `ens37`, GhostGate LAN, `10.10.10.1/24` |
+| Client interface | `ens33`, GhostGate LAN, `10.10.10.2/24` |
+| Client gateway | `10.10.10.1` |
+| Client DNS | `10.10.10.1` |
+
+Verified working features:
+
+- Client VM reaches Router VM at `10.10.10.1`
+- Client VM reaches internet IPs through the Router VM
+- Client VM resolves domains through Router VM DNS
+- Router VM runs `dnsmasq` on `10.10.10.1`
+- Router VM logs DNS queries from Client VM `10.10.10.2`
+- IPv4 DNS blocklist returns `0.0.0.0` for `doubleclick.net`
+- SSH access to the Router VM works from Windows through VMware NAT port forwarding
+- NAT and forwarding recovery steps are documented
+
+Current milestone:
+
+```text
+Client VM -> Router VM -> NAT -> Internet
+Client VM -> Router VM DNS -> upstream DNS
+Client VM -> Router VM DNS blocklist -> blocked tracker domains
+```
+
+Known limitation:
+
+- IPv6 leak handling is documented but not fully implemented yet.
+
+---
+
 ## Basic Architecture
 
 ```text
@@ -317,6 +359,11 @@ GhostGate/
 │   ├── ip-forwarding.md
 │   ├── nat-routing.md
 │   ├── dns.md
+│   ├── dns-logging.md
+│   ├── ad-blocking.md
+│   ├── ipv6-leak-notes.md
+│   ├── persistent-firewall.md
+│   ├── ssh-access.md
 │   ├── firewall.md
 │   ├── tor-mode.md
 │   ├── vpn-mode.md
@@ -369,10 +416,10 @@ GhostGate/
 
 Project officially started.
 
-Current phase:
+Current project phase:
 
 ```text
-Phase 0: Repository setup and planning
+Phase 2: DNS filtering and privacy controls
 ```
 
 Completed:
@@ -387,6 +434,14 @@ Completed:
 - Ethical use policy added
 - Example configs added
 - Day 1 checklist added
+- VMware router/client lab created
+- Static IP routing configured
+- IP forwarding configured
+- NAT configured
+- DNS resolver configured
+- DNS logging verified
+- IPv4 DNS blocklist verified
+- SSH access configured for easier router administration
 
 ---
 
@@ -402,8 +457,15 @@ Completed:
 - [Static IP Setup](docs/static-ip-setup.md)
 - [IP Forwarding](docs/ip-forwarding.md)
 - [NAT Routing](docs/nat-routing.md)
+- [DNS Resolver](docs/dns.md)
+- [DNS Logging](docs/dns-logging.md)
+- [Ad And Tracker Blocking](docs/ad-blocking.md)
+- [IPv6 Leak Notes](docs/ipv6-leak-notes.md)
+- [Persistent Firewall](docs/persistent-firewall.md)
+- [SSH Access](docs/ssh-access.md)
 - [Day 2 Checklist](docs/day-2-checklist.md)
 - [Day 3 Checklist](docs/day-3-checklist.md)
+- [Day 4 Checklist](docs/day-4-checklist.md)
 - [Troubleshooting](docs/troubleshooting.md)
 
 ---

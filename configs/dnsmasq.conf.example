@@ -1,9 +1,9 @@
 # GhostGate dnsmasq example
 #
 # Copy this to /etc/dnsmasq.d/ghostgate.conf on the Router VM later.
-# Adjust interface names after checking `ip a`.
+# Current VMware lab inside interface: ens37
 
-interface=enp0s8
+interface=ens37
 listen-address=10.10.10.1
 bind-interfaces
 
