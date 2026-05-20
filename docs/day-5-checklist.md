@@ -65,3 +65,10 @@ work on the Router VM.
 
 - [x] Read-only dashboard opens from Client VM
 - [x] Dashboard runs as a `systemd` service
+
+## Baseline Service
+
+- [x] Add baseline service
+- [x] Fix Linux line endings for copied scripts
+- [x] Confirm `ghostgate-baseline.service` is `active (exited)`
+- [x] Confirm baseline exits with status `0/SUCCESS`

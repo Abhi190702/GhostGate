@@ -374,7 +374,9 @@ GhostGate/
 │   ├── day-6-checklist.md
 │   ├── tor-mode.md
 │   ├── killswitch.md
+│   ├── wireguard-basics.md
 │   ├── vpn-mode.md
+│   ├── day-7-checklist.md
 │   ├── split-tunneling.md
 │   └── troubleshooting.md
 │

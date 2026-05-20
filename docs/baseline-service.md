@@ -28,6 +28,20 @@ sudo systemctl status ghostgate-baseline --no-pager -l
 ghostgate leak-test
 ```
 
+Expected:
+
+```text
+active (exited)
+status=0/SUCCESS
+GhostGate baseline routing and firewall applied
+```
+
+Verified:
+
+```text
+ghostgate-baseline.service completed successfully after line-ending repair
+```
+
 ## Reapply Manually
 
 ```bash

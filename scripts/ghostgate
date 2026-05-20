@@ -35,6 +35,12 @@ case "${1:-}" in
   tor-off)
     "$SCRIPT_DIR/tor-mode-off.sh"
     ;;
+  vpn-on)
+    "$SCRIPT_DIR/vpn-mode-on.sh"
+    ;;
+  vpn-off)
+    "$SCRIPT_DIR/vpn-mode-off.sh"
+    ;;
   lockdown)
     "$SCRIPT_DIR/killswitch-on.sh"
     ;;
@@ -45,7 +51,7 @@ case "${1:-}" in
     "$SCRIPT_DIR/leak-test.sh"
     ;;
   *)
-    echo "Usage: ghostgate {status|dns-logs|monitor|firewall-on|baseline|tor-on|tor-off|lockdown|unlock|leak-test}"
+    echo "Usage: ghostgate {status|dns-logs|monitor|firewall-on|baseline|tor-on|tor-off|vpn-on|vpn-off|lockdown|unlock|leak-test}"
     exit 1
     ;;
 esac

@@ -34,6 +34,8 @@ under `scripts/host/`.
 - `leak-test.sh`
 - `tor-mode-on.sh`
 - `tor-mode-off.sh`
+- `vpn-mode-on.sh`
+- `vpn-mode-off.sh`
 - `killswitch-on.sh`
 - `killswitch-off.sh`
 - `ghostgate`
