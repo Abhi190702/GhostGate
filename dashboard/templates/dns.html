@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="grid">
+  <article>
+    <h2>DNS Listener</h2>
+    <pre>{{ listener }}</pre>
+  </article>
+  <article>
+    <h2>Recent DNS Logs</h2>
+    <pre>{{ logs }}</pre>
+  </article>
+</section>
+{% endblock %}

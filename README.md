@@ -365,7 +365,15 @@ GhostGate/
 │   ├── persistent-firewall.md
 │   ├── ssh-access.md
 │   ├── firewall.md
+│   ├── traffic-monitoring.md
+│   ├── cli.md
+│   ├── dashboard.md
+│   ├── dashboard-service.md
+│   ├── baseline-service.md
+│   ├── day-5-checklist.md
+│   ├── day-6-checklist.md
 │   ├── tor-mode.md
+│   ├── killswitch.md
 │   ├── vpn-mode.md
 │   ├── split-tunneling.md
 │   └── troubleshooting.md
@@ -463,9 +471,17 @@ Completed:
 - [IPv6 Leak Notes](docs/ipv6-leak-notes.md)
 - [Persistent Firewall](docs/persistent-firewall.md)
 - [SSH Access](docs/ssh-access.md)
+- [Basic Firewall](docs/firewall.md)
+- [Traffic Monitoring](docs/traffic-monitoring.md)
+- [GhostGate CLI](docs/cli.md)
+- [Dashboard](docs/dashboard.md)
+- [Dashboard Service](docs/dashboard-service.md)
+- [Baseline Service](docs/baseline-service.md)
 - [Day 2 Checklist](docs/day-2-checklist.md)
 - [Day 3 Checklist](docs/day-3-checklist.md)
 - [Day 4 Checklist](docs/day-4-checklist.md)
+- [Day 5 Checklist](docs/day-5-checklist.md)
+- [Day 6 Checklist](docs/day-6-checklist.md)
 - [Troubleshooting](docs/troubleshooting.md)
 
 ---

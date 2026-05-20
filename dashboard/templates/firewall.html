@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="grid">
+  <article>
+    <h2>Forward Rules</h2>
+    <pre>{{ forward }}</pre>
+  </article>
+  <article>
+    <h2>NAT Rules</h2>
+    <pre>{{ nat }}</pre>
+  </article>
+</section>
+{% endblock %}

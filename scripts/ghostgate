@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SOURCE="${BASH_SOURCE[0]}"
+while [ -L "$SOURCE" ]; do
+  DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ "$SOURCE" != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+
+case "${1:-}" in
+  status)
+    ip -br a
+    echo
+    ip route
+    echo
+    systemctl status dnsmasq --no-pager -l || true
+    ;;
+  dns-logs)
+    "$SCRIPT_DIR/dns-logs.sh"
+    ;;
+  monitor)
+    "$SCRIPT_DIR/monitor-traffic.sh" "${2:-tcpdump}"
+    ;;
+  firewall-on)
+    "$SCRIPT_DIR/firewall-basic.sh"
+    ;;
+  baseline)
+    "$SCRIPT_DIR/apply-baseline.sh"
+    ;;
+  tor-on)
+    "$SCRIPT_DIR/tor-mode-on.sh"
+    ;;
+  tor-off)
+    "$SCRIPT_DIR/tor-mode-off.sh"
+    ;;
+  lockdown)
+    "$SCRIPT_DIR/killswitch-on.sh"
+    ;;
+  unlock)
+    "$SCRIPT_DIR/killswitch-off.sh"
+    ;;
+  leak-test)
+    "$SCRIPT_DIR/leak-test.sh"
+    ;;
+  *)
+    echo "Usage: ghostgate {status|dns-logs|monitor|firewall-on|baseline|tor-on|tor-off|lockdown|unlock|leak-test}"
+    exit 1
+    ;;
+esac

@@ -23,6 +23,21 @@ under `scripts/host/`.
 | `leak-test.sh` | Check public IP, DNS route, Tor, WireGuard, and default route |
 | `ghostgate` | Main CLI wrapper |
 
+## Current Implemented Scripts
+
+- `enable-ip-forwarding.sh`
+- `enable-nat.sh`
+- `apply-baseline.sh`
+- `dns-logs.sh`
+- `firewall-basic.sh`
+- `monitor-traffic.sh`
+- `leak-test.sh`
+- `tor-mode-on.sh`
+- `tor-mode-off.sh`
+- `killswitch-on.sh`
+- `killswitch-off.sh`
+- `ghostgate`
+
 ## Host Helpers
 
 | Script | Purpose |

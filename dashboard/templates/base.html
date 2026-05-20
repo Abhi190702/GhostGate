@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GhostGate - {{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>GhostGate</h1>
+        <p>Virtual privacy router dashboard</p>
+      </div>
+      <nav>
+        <a class="{{ 'active' if active == 'overview' else '' }}" href="/">Overview</a>
+        <a class="{{ 'active' if active == 'dns' else '' }}" href="/dns">DNS</a>
+        <a class="{{ 'active' if active == 'firewall' else '' }}" href="/firewall">Firewall</a>
+        <a class="{{ 'active' if active == 'traffic' else '' }}" href="/traffic">Traffic</a>
+        <a class="{{ 'active' if active == 'status' else '' }}" href="/status">Status</a>
+      </nav>
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>

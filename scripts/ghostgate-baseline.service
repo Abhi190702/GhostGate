@@ -1,0 +1,12 @@
+[Unit]
+Description=GhostGate baseline routing and firewall
+After=network-online.target dnsmasq.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/ghostgate/scripts/apply-baseline.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

@@ -1,6 +1,6 @@
 # Dashboard
 
-This folder will contain the GhostGate web dashboard.
+This folder contains the GhostGate web dashboard.
 
 The dashboard will run on the Privacy Router VM and show lab status from the
 Client VM browser.
@@ -27,5 +27,5 @@ http://10.10.10.1:5000
 - HTML templates
 - CSS
 
-The first dashboard version should be read-only. Mode switching can be added
-later after the CLI scripts are stable.
+The first dashboard version is read-only. Mode switching can be added later
+after the CLI scripts are stable.

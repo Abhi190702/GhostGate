@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="grid">
+  <article>
+    <h2>dnsmasq Status</h2>
+    <pre>{{ services }}</pre>
+  </article>
+  <article>
+    <h2>Leak Test</h2>
+    <pre>{{ leak_test }}</pre>
+  </article>
+</section>
+{% endblock %}

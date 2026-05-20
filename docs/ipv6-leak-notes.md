@@ -23,6 +23,30 @@ For the first GhostGate version, use a simple rule:
 Disable or block IPv6 on the lab path until IPv6 routing and firewalling are explicitly supported.
 ```
 
+## Disable IPv6 On Client Connection
+
+On the Client VM:
+
+```bash
+sudo nmcli con mod ghostgate-client ipv6.method disabled
+sudo nmcli con down ghostgate-client
+sudo nmcli con up ghostgate-client
+```
+
+Then check:
+
+```bash
+ip -6 route
+getent hosts doubleclick.net
+getent ahostsv4 doubleclick.net
+```
+
+Expected for the block test:
+
+```text
+0.0.0.0
+```
+
 ## Client Check
 
 On the Client VM:
